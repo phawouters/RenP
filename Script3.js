@@ -207,6 +207,9 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             bobberekendLabel.textContent = "0.00";
         }
+
+        var dalingCm = Math.round((bob2 - result) * 100);
+        document.getElementById("cmdaling").textContent = "- " + dalingCm;
     };
 
     setupBobStepper("bob", "bob-up", "bob-down");
