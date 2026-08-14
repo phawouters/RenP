@@ -210,6 +210,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var dalingCm = Math.round((bob2 - result) * 100);
         document.getElementById("cmdaling").textContent = "- " + dalingCm;
+        clearBerekenStale();
     };
 
     setupBobStepper("bob", "bob-up", "bob-down");
@@ -235,8 +236,34 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("put2bovenkant").textContent = "----";
         document.getElementById("put1dekking").textContent = "----";
         document.getElementById("put1bovenkant").textContent = "----";
+        clearBerekenStale();
+    };
+
+    var markBerekenStale = function () {
+        document.getElementById("bereken").classList.add("bereken-stale");
+    };
+
+    var clearBerekenStale = function () {
+        document.getElementById("bereken").classList.remove("bereken-stale");
     };
 
     document.getElementById("bereken").addEventListener("click", onBerekenClick);
     document.getElementById("reset").addEventListener("click", onResetClick);
+
+    ["afstand-m", "afstand-cm", "putdekselhoogte-put1", "putdekselhoogte-put2",
+        "bob2", "putnummer-put1", "putnummer-put2", "percentage", "buizen"
+    ].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) { el.addEventListener("change", markBerekenStale); }
+    });
+
+    // stepper buttons don't fire 'change', so listen on mousedown directly
+    ["afstand-m-up", "afstand-m-down", "afstand-cm-up", "afstand-cm-down",
+        "putdekselhoogte-put1-up", "putdekselhoogte-put1-down",
+        "putdekselhoogte-put2-up", "putdekselhoogte-put2-down",
+        "bob2-up", "bob2-down"
+    ].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) { el.addEventListener("mousedown", markBerekenStale); }
+    });
 });
