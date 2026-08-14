@@ -92,49 +92,6 @@ svg
     position: relative;
 }
 
-.switch-option
-{
-    position: absolute;
-    left: 700px;
-}
-
-.switch-option input
-{
-    margin-right: 8px;
-}
-
-.switch-option:first-of-type
-{
-    top: 100px;
-}
-
-.switch-option:last-of-type
-{
-    top: 130px;
-}
-
-#optie1-label
-{
-    left: 656px;
-    top: 70px;
-}
-
-#optie2-label
-{
-    left: 656px;
-    top: 120px;
-}
-
-.switch-option-hint
-{
-    display: block;
-    margin-left: 20px;
-    font-size: 0.8em;
-    font-style: italic;
-    color: #666;
-    pointer-events: none;
-}
-
 .put-textbox
 {
     border: 0.5px solid black;

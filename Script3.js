@@ -1,53 +1,6 @@
 // JavaScript source code
 
-// TweePutten.html: mutually exclusive "Optie 1" / "Optie 2" checkboxes.
-// Only one of the two can be checked at a time (radio-button-like behavior),
-// and unchecking the active one re-checks it so at least one always stays checked.
 document.addEventListener("DOMContentLoaded", function () {
-    var optie1 = document.getElementById("optie1");
-    var optie2 = document.getElementById("optie2");
-
-    if (optie1 && optie2) {
-        // If Optie 1 is checked, uncheck Optie 2; if the user tries to uncheck
-        // Optie 1 directly, force it back to checked (keep exactly one selected).
-        optie1.addEventListener("change", function () {
-            if (optie1.checked) {
-                optie2.checked = false;
-            } else {
-                optie1.checked = true;
-            }
-            updateBob2Position();
-        });
-
-        // Same logic in reverse for Optie 2.
-        optie2.addEventListener("change", function () {
-            if (optie2.checked) {
-                optie1.checked = false;
-            } else {
-                optie2.checked = true;
-            }
-            updateBob2Position();
-        });
-    }
-
-    // TweePutten.html: the "bob2" wrapper moves horizontally depending on
-    // which of the mutually exclusive Optie 1 / Optie 2 checkboxes is checked.
-    var bob2Wrapper = document.getElementById("bob2-wrapper");
-
-    var updateBob2Position = function () {
-        if (!bob2Wrapper) {
-            return;
-        }
-
-        if (optie2 && optie2.checked) {
-            bob2Wrapper.style.left = "410px";
-        } else {
-            bob2Wrapper.style.left = "210px";
-        }
-    };
-
-    updateBob2Position();
-
     // TweePutten.html: "bob" is a text input (so it can show a trailing sign)
     // that behaves like a numeric stepper. It always displays 2 decimals with
     // the sign shown AFTER the number, e.g. "3.56 -", "2.35 +", or plain "0.00"
