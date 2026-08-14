@@ -185,6 +185,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
+    var onBerekenClick = function () {
+        // TODO: implement
+    };
+
     setupBobStepper("bob", "bob-up", "bob-down");
     setupBobStepper("bob2", "bob2-up", "bob2-down");
     setupBobStepper("putdekselhoogte-put1", "putdekselhoogte-put1-up", "putdekselhoogte-put1-down");

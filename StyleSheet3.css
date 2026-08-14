@@ -41,6 +41,7 @@
 {
     width: 1000px;
     margin: 0 auto;
+    position: relative;
 }
 
 .buizen-table
