@@ -219,5 +219,24 @@ document.addEventListener("DOMContentLoaded", function () {
     setupCounterStepper("afstand-m", "afstand-m-up", "afstand-m-down");
     setupCounterStepper("afstand-cm", "afstand-cm-up", "afstand-cm-down");
 
+    var onResetClick = function () {
+        document.getElementById("afstand-m").value = "00";
+        document.getElementById("afstand-cm").value = "00";
+        document.getElementById("putnummer-put1").value = "";
+        document.getElementById("putnummer-put2").value = "";
+        document.getElementById("putdekselhoogte-put1").value = "0.00";
+        document.getElementById("putdekselhoogte-put2").value = "0.00";
+        document.getElementById("bob2").value = "0.00";
+        document.getElementById("percentage").selectedIndex = 0;
+        document.getElementById("buizen").selectedIndex = 0;
+        document.getElementById("bobberekend").textContent = "---";
+        document.getElementById("cmdaling").textContent = "---";
+        document.getElementById("put2dekking").textContent = "----";
+        document.getElementById("put2bovenkant").textContent = "----";
+        document.getElementById("put1dekking").textContent = "----";
+        document.getElementById("put1bovenkant").textContent = "----";
+    };
+
     document.getElementById("bereken").addEventListener("click", onBerekenClick);
+    document.getElementById("reset").addEventListener("click", onResetClick);
 });
