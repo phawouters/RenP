@@ -221,12 +221,15 @@ document.addEventListener("DOMContentLoaded", function () {
     setupCounterStepper("afstand-cm", "afstand-cm-up", "afstand-cm-down");
 
     var onResetClick = function () {
+        var bewaar = document.getElementById("bewaar-putinfo").checked;
         document.getElementById("afstand-m").value = "00";
         document.getElementById("afstand-cm").value = "00";
-        document.getElementById("putnummer-put1").value = "";
-        document.getElementById("putnummer-put2").value = "";
-        document.getElementById("putdekselhoogte-put1").value = "0.00";
-        document.getElementById("putdekselhoogte-put2").value = "0.00";
+        if (!bewaar) {
+            document.getElementById("putnummer-put1").value = "";
+            document.getElementById("putnummer-put2").value = "";
+            document.getElementById("putdekselhoogte-put1").value = "0.00";
+            document.getElementById("putdekselhoogte-put2").value = "0.00";
+        }
         document.getElementById("bob2").value = "0.00";
         document.getElementById("percentage").selectedIndex = 0;
         document.getElementById("buizen").selectedIndex = 0;
