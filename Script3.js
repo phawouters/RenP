@@ -10,92 +10,92 @@ document.addEventListener("DOMContentLoaded", function () {
         var bob = document.getElementById(inputId);
 
         if (bob) {
-        var min = parseFloat(bob.dataset.min);
-        var max = parseFloat(bob.dataset.max);
-        var step = parseFloat(bob.dataset.step);
+            var min = parseFloat(bob.dataset.min);
+            var max = parseFloat(bob.dataset.max);
+            var step = parseFloat(bob.dataset.step);
 
-        var parseBobValue = function () {
-            var raw = bob.value.replace(",", ".");
-            var isNegative = raw.indexOf("-") !== -1;
-            var numeric = raw.replace(/[^0-9.]/g, "");
-            var value = parseFloat(numeric);
+            var parseBobValue = function () {
+                var raw = bob.value.replace(",", ".");
+                var isNegative = raw.indexOf("-") !== -1;
+                var numeric = raw.replace(/[^0-9.]/g, "");
+                var value = parseFloat(numeric);
 
-            if (isNaN(value)) {
-                value = 0;
-            }
+                if (isNaN(value)) {
+                    value = 0;
+                }
 
-            return isNegative ? -Math.abs(value) : value;
-        };
+                return isNegative ? -Math.abs(value) : value;
+            };
 
-        var formatBob = function (value) {
-            var clamped = Math.min(max, Math.max(min, value));
-            var rounded = parseFloat(clamped.toFixed(2));
+            var formatBob = function (value) {
+                var clamped = Math.min(max, Math.max(min, value));
+                var rounded = parseFloat(clamped.toFixed(2));
 
-            if (rounded > 0) {
-                bob.value = rounded.toFixed(2) + " +";
-            } else if (rounded < 0) {
-                bob.value = Math.abs(rounded).toFixed(2) + " -";
-            } else {
-                bob.value = "0.00";
-            }
+                if (rounded > 0) {
+                    bob.value = rounded.toFixed(2) + " +";
+                } else if (rounded < 0) {
+                    bob.value = Math.abs(rounded).toFixed(2) + " -";
+                } else {
+                    bob.value = "0.00";
+                }
 
-            return rounded;
-        };
+                return rounded;
+            };
 
-        formatBob(parseBobValue());
-
-        bob.addEventListener("change", function () {
             formatBob(parseBobValue());
-        });
 
-        bob.addEventListener("keydown", function (event) {
-            if (event.key === "ArrowUp" || event.key === "ArrowDown") {
-                event.preventDefault();
-                var current = parseBobValue();
-                var next = event.key === "ArrowUp" ? current + step : current - step;
-                formatBob(next);
+            bob.addEventListener("change", function () {
+                formatBob(parseBobValue());
+            });
+
+            bob.addEventListener("keydown", function (event) {
+                if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+                    event.preventDefault();
+                    var current = parseBobValue();
+                    var next = event.key === "ArrowUp" ? current + step : current - step;
+                    formatBob(next);
+                }
+            });
+
+            // Custom spinner arrows (▲/▼), since a text input has no native ones.
+            // Clicking steps once; press-and-hold keeps repeating the step until released.
+            var bobUp = document.getElementById(upId);
+            var bobDown = document.getElementById(downId);
+            var holdInterval = null;
+            var holdTimeout = null;
+
+            var stopHolding = function () {
+                clearTimeout(holdTimeout);
+                clearInterval(holdInterval);
+                holdTimeout = null;
+                holdInterval = null;
+            };
+
+            var startHolding = function (direction) {
+                stopHolding();
+                formatBob(parseBobValue() + direction * step);
+
+                holdTimeout = setTimeout(function () {
+                    holdInterval = setInterval(function () {
+                        formatBob(parseBobValue() + direction * step);
+                    }, 80);
+                }, 400);
+            };
+
+            if (bobUp) {
+                bobUp.addEventListener("mousedown", function () {
+                    startHolding(1);
+                });
             }
-        });
 
-        // Custom spinner arrows (▲/▼), since a text input has no native ones.
-        // Clicking steps once; press-and-hold keeps repeating the step until released.
-        var bobUp = document.getElementById(upId);
-        var bobDown = document.getElementById(downId);
-        var holdInterval = null;
-        var holdTimeout = null;
+            if (bobDown) {
+                bobDown.addEventListener("mousedown", function () {
+                    startHolding(-1);
+                });
+            }
 
-        var stopHolding = function () {
-            clearTimeout(holdTimeout);
-            clearInterval(holdInterval);
-            holdTimeout = null;
-            holdInterval = null;
-        };
-
-        var startHolding = function (direction) {
-            stopHolding();
-            formatBob(parseBobValue() + direction * step);
-
-            holdTimeout = setTimeout(function () {
-                holdInterval = setInterval(function () {
-                    formatBob(parseBobValue() + direction * step);
-                }, 80);
-            }, 400);
-        };
-
-        if (bobUp) {
-            bobUp.addEventListener("mousedown", function () {
-                startHolding(1);
-            });
-        }
-
-        if (bobDown) {
-            bobDown.addEventListener("mousedown", function () {
-                startHolding(-1);
-            });
-        }
-
-        document.addEventListener("mouseup", stopHolding);
-        document.addEventListener("mouseleave", stopHolding);
+            document.addEventListener("mouseup", stopHolding);
+            document.addEventListener("mouseleave", stopHolding);
         }
     };
 
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-        var onBerekenClick = function () {
+    var onBerekenClick = function () {
         var m = parseInt(document.getElementById("afstand-m").value, 10) || 0;
         var cm = parseInt(document.getElementById("afstand-cm").value, 10) || 0;
         var afstand = parseFloat((m + cm / 100).toFixed(2));
@@ -199,7 +199,14 @@ document.addEventListener("DOMContentLoaded", function () {
         var bob2 = bob2Negative ? -Math.abs(bob2Numeric) : bob2Numeric;
 
         var result = parseFloat((bob2 - afstand * promille * 0.001).toFixed(2));
-        document.getElementById("bobberekend").textContent = result.toFixed(2);
+        var bobberekendLabel = document.getElementById("bobberekend");
+        if (result > 0) {
+            bobberekendLabel.textContent = result.toFixed(2) + " +";
+        } else if (result < 0) {
+            bobberekendLabel.textContent = Math.abs(result).toFixed(2) + " -";
+        } else {
+            bobberekendLabel.textContent = "0.00";
+        }
     };
 
     setupBobStepper("bob", "bob-up", "bob-down");
