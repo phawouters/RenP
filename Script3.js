@@ -185,8 +185,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    var onBerekenClick = function () {
-        // TODO: implement
+        var onBerekenClick = function () {
+        var m = parseInt(document.getElementById("afstand-m").value, 10) || 0;
+        var cm = parseInt(document.getElementById("afstand-cm").value, 10) || 0;
+        var afstand = parseFloat((m + cm / 100).toFixed(2));
+
+        var promille = parseFloat(document.getElementById("percentage").value) || 0;
+
+        // parse bob2 formatted value (e.g. "3.56 +" or "2.35 -")
+        var bob2Raw = document.getElementById("bob2").value;
+        var bob2Negative = bob2Raw.indexOf("-") !== -1;
+        var bob2Numeric = parseFloat(bob2Raw.replace(/[^0-9.]/g, "")) || 0;
+        var bob2 = bob2Negative ? -Math.abs(bob2Numeric) : bob2Numeric;
+
+        var result = parseFloat((bob2 - afstand * promille * 0.001).toFixed(2));
+        document.getElementById("bobberekend").textContent = result.toFixed(2);
     };
 
     setupBobStepper("bob", "bob-up", "bob-down");
@@ -195,4 +208,6 @@ document.addEventListener("DOMContentLoaded", function () {
     setupBobStepper("putdekselhoogte-put2", "putdekselhoogte-put2-up", "putdekselhoogte-put2-down");
     setupCounterStepper("afstand-m", "afstand-m-up", "afstand-m-down");
     setupCounterStepper("afstand-cm", "afstand-cm-up", "afstand-cm-down");
+
+    document.getElementById("bereken").addEventListener("click", onBerekenClick);
 });
