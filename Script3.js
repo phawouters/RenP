@@ -368,45 +368,17 @@ document.addEventListener("DOMContentLoaded", function () {
         var json = JSON.stringify(data, null, 2);
         var filename = buildFilename();
 
-        if (window.showSaveFilePicker) {
-            window.showSaveFilePicker({
-                suggestedName: filename,
-                types: [{ description: "Twee Putten bestand", accept: { "application/json": [".2pt"] } }]
-            }).then(function (handle) {
-                return handle.createWritable().then(function (writable) {
-                    return writable.write(json).then(function () { return writable.close(); });
-                });
-            }).catch(function (e) {
-                if (e.name !== "AbortError") { alert("Opslaan mislukt: " + e.message); }
-            });
-        } else {
-            var blob = new Blob([json], { type: "application/json" });
-            var url = URL.createObjectURL(blob);
-            var a = document.createElement("a");
-            a.href = url;
-            a.download = filename;
-            a.click();
-            URL.revokeObjectURL(url);
-        }
+        var blob = new Blob([json], { type: "application/json" });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement("a");
+        a.href = url;
+        a.download = filename;
+        a.click();
+        URL.revokeObjectURL(url);
     };
 
     var onLadenClick = function () {
-        if (window.showOpenFilePicker) {
-            window.showOpenFilePicker({
-                types: [{ description: "Twee Putten bestand", accept: { "application/json": [".2pt"] } }],
-                multiple: false
-            }).then(function (handles) {
-                return handles[0].getFile();
-            }).then(function (file) {
-                return file.text();
-            }).then(function (text) {
-                restoreData(JSON.parse(text));
-            }).catch(function (e) {
-                if (e.name !== "AbortError") { alert("Laden mislukt: " + e.message); }
-            });
-        } else {
-            document.getElementById("laad-bestand").click();
-        }
+        document.getElementById("laad-bestand").click();
     };
 
     var laadBestand = document.getElementById("laad-bestand");
