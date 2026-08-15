@@ -429,8 +429,58 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("bereken").addEventListener("click", onBerekenClick);
     document.getElementById("reset").addEventListener("click", onResetClick);
+    var onAfdrukkenClick = function () {
+        var printArea = document.getElementById("print-area");
+        printArea.innerHTML = "";
+
+        // Naam header
+        var naam = (document.getElementById("naam-input").value || "").trim();
+        var header = document.createElement("div");
+        header.className = "print-header";
+        header.textContent = naam || "Twee Putten";
+        printArea.appendChild(header);
+
+        // Clone svg-wrapper and sync live field values
+        var svgWrapper = document.querySelector(".svg-wrapper");
+        var clone = svgWrapper.cloneNode(true);
+
+        var origInputs = svgWrapper.querySelectorAll("input");
+        var cloneInputs = clone.querySelectorAll("input");
+        origInputs.forEach(function (orig, i) {
+            if (orig.type === "checkbox") {
+                cloneInputs[i].checked = orig.checked;
+            } else {
+                cloneInputs[i].value = orig.value;
+            }
+        });
+
+        var origSelects = svgWrapper.querySelectorAll("select");
+        var cloneSelects = clone.querySelectorAll("select");
+        origSelects.forEach(function (orig, i) {
+            cloneSelects[i].value = orig.value;
+        });
+
+        // Remove stepper arrow buttons from clone
+        clone.querySelectorAll("button").forEach(function (btn) { btn.remove(); });
+
+        printArea.appendChild(clone);
+
+        // Aantekeningen in a bordered box
+        var box = document.createElement("div");
+        box.className = "print-aantekeningen";
+        box.textContent = document.getElementById("aantekeningen").value;
+        printArea.appendChild(box);
+
+        // Suggest filename via document.title (browsers use it for PDF name)
+        var origTitle = document.title;
+        document.title = buildFilename().replace(/\.2pt$/, "");
+        window.print();
+        document.title = origTitle;
+    };
+
     document.getElementById("opslaan").addEventListener("click", onOpslaanClick);
     document.getElementById("laden").addEventListener("click", onLadenClick);
+    document.getElementById("afdrukken").addEventListener("click", onAfdrukkenClick);
 
     ["afstand-m", "afstand-cm", "putdekselhoogte-put1", "putdekselhoogte-put2",
         "bob2", "putnummer-put1", "putnummer-put2", "percentage", "buizen"
