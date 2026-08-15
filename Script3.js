@@ -309,8 +309,127 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("bereken").classList.remove("bereken-stale");
     };
 
+    var buildFilename = function () {
+        var naam = (document.getElementById("naam-input").value || "").trim();
+        var nr1 = (document.getElementById("putnummer-put1").value || "").trim();
+        var nr2 = (document.getElementById("putnummer-put2").value || "").trim();
+        var parts = [naam, nr1, nr2].filter(function (s) { return s !== ""; });
+        return (parts.join(" - ") || "berekening") + ".2pt";
+    };
+
+    var collectData = function () {
+        return {
+            naam: document.getElementById("naam-input").value,
+            putnummer_put1: document.getElementById("putnummer-put1").value,
+            putnummer_put2: document.getElementById("putnummer-put2").value,
+            putdekselhoogte_put1: document.getElementById("putdekselhoogte-put1").value,
+            putdekselhoogte_put2: document.getElementById("putdekselhoogte-put2").value,
+            bob2: document.getElementById("bob2").value,
+            afstand_m: document.getElementById("afstand-m").value,
+            afstand_cm: document.getElementById("afstand-cm").value,
+            percentage: document.getElementById("percentage").value,
+            buizen: document.getElementById("buizen").value,
+            bewaar_putinfo: document.getElementById("bewaar-putinfo").checked,
+            aantekeningen: document.getElementById("aantekeningen").value,
+            bobberekend: document.getElementById("bobberekend").textContent,
+            cmdaling: document.getElementById("cmdaling").textContent,
+            put1dekking: document.getElementById("put1dekking").textContent,
+            put1bovenkant: document.getElementById("put1bovenkant").textContent,
+            put2dekking: document.getElementById("put2dekking").textContent,
+            put2bovenkant: document.getElementById("put2bovenkant").textContent
+        };
+    };
+
+    var restoreData = function (data) {
+        document.getElementById("naam-input").value = data.naam || "";
+        document.getElementById("putnummer-put1").value = data.putnummer_put1 || "";
+        document.getElementById("putnummer-put2").value = data.putnummer_put2 || "";
+        document.getElementById("putdekselhoogte-put1").value = data.putdekselhoogte_put1 || "0.00";
+        document.getElementById("putdekselhoogte-put2").value = data.putdekselhoogte_put2 || "0.00";
+        document.getElementById("bob2").value = data.bob2 || "0.00";
+        document.getElementById("afstand-m").value = data.afstand_m || "00";
+        document.getElementById("afstand-cm").value = data.afstand_cm || "00";
+        document.getElementById("percentage").value = data.percentage || "0.0";
+        document.getElementById("buizen").value = data.buizen || "0";
+        document.getElementById("bewaar-putinfo").checked = !!data.bewaar_putinfo;
+        document.getElementById("aantekeningen").value = data.aantekeningen || "";
+        document.getElementById("bobberekend").textContent = data.bobberekend || "---";
+        document.getElementById("cmdaling").textContent = data.cmdaling || "---";
+        document.getElementById("put1dekking").textContent = data.put1dekking || "----";
+        document.getElementById("put1bovenkant").textContent = data.put1bovenkant || "----";
+        document.getElementById("put2dekking").textContent = data.put2dekking || "----";
+        document.getElementById("put2bovenkant").textContent = data.put2bovenkant || "----";
+        clearBerekenStale();
+    };
+
+    var onOpslaanClick = function () {
+        var data = collectData();
+        var json = JSON.stringify(data, null, 2);
+        var filename = buildFilename();
+
+        if (window.showSaveFilePicker) {
+            window.showSaveFilePicker({
+                suggestedName: filename,
+                types: [{ description: "Twee Putten bestand", accept: { "application/json": [".2pt"] } }]
+            }).then(function (handle) {
+                return handle.createWritable().then(function (writable) {
+                    return writable.write(json).then(function () { return writable.close(); });
+                });
+            }).catch(function (e) {
+                if (e.name !== "AbortError") { alert("Opslaan mislukt: " + e.message); }
+            });
+        } else {
+            var blob = new Blob([json], { type: "application/json" });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement("a");
+            a.href = url;
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+    };
+
+    var onLadenClick = function () {
+        if (window.showOpenFilePicker) {
+            window.showOpenFilePicker({
+                types: [{ description: "Twee Putten bestand", accept: { "application/json": [".2pt"] } }],
+                multiple: false
+            }).then(function (handles) {
+                return handles[0].getFile();
+            }).then(function (file) {
+                return file.text();
+            }).then(function (text) {
+                restoreData(JSON.parse(text));
+            }).catch(function (e) {
+                if (e.name !== "AbortError") { alert("Laden mislukt: " + e.message); }
+            });
+        } else {
+            document.getElementById("laad-bestand").click();
+        }
+    };
+
+    var laadBestand = document.getElementById("laad-bestand");
+    if (laadBestand) {
+        laadBestand.addEventListener("change", function () {
+            var file = laadBestand.files[0];
+            if (!file) { return; }
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                try {
+                    restoreData(JSON.parse(e.target.result));
+                } catch (err) {
+                    alert("Ongeldig bestand: " + err.message);
+                }
+            };
+            reader.readAsText(file);
+            laadBestand.value = "";
+        });
+    }
+
     document.getElementById("bereken").addEventListener("click", onBerekenClick);
     document.getElementById("reset").addEventListener("click", onResetClick);
+    document.getElementById("opslaan").addEventListener("click", onOpslaanClick);
+    document.getElementById("laden").addEventListener("click", onLadenClick);
 
     ["afstand-m", "afstand-cm", "putdekselhoogte-put1", "putdekselhoogte-put2",
         "bob2", "putnummer-put1", "putnummer-put2", "percentage", "buizen"
