@@ -283,13 +283,13 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("afstand-m").value = "00";
         document.getElementById("afstand-cm").value = "00";
         if (!bewaar) {
+            document.getElementById("naam-input").value = "";
             document.getElementById("putnummer-put1").value = "";
             document.getElementById("putnummer-put2").value = "";
             document.getElementById("putdekselhoogte-put1").value = "0.00";
             document.getElementById("putdekselhoogte-put2").value = "0.00";
+            document.getElementById("aantekeningen").value = "";
         }
-        document.getElementById("naam-input").value = "";
-        document.getElementById("aantekeningen").value = "";
         document.getElementById("bob2").value = "0.00";
         document.getElementById("percentage").selectedIndex = 0;
         document.getElementById("buizen").selectedIndex = 0;
