@@ -288,6 +288,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("putdekselhoogte-put1").value = "0.00";
             document.getElementById("putdekselhoogte-put2").value = "0.00";
         }
+        document.getElementById("naam-input").value = "";
         document.getElementById("bob2").value = "0.00";
         document.getElementById("percentage").selectedIndex = 0;
         document.getElementById("buizen").selectedIndex = 0;
