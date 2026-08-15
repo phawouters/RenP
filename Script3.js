@@ -217,6 +217,30 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("put1dekking").textContent = dekking.toFixed(2);
     };
 
+    var berekendekkingPut2 = function () {
+        var select = document.getElementById("buizen");
+        var parts = select.options[select.selectedIndex].text.split(" ");
+        var diameterMm = parseFloat(parts[1]) || 0;
+        var wallMm = parseFloat((parts[2] || "0").replace(",", ".")) || 0;
+        var pipeOuterM = Math.round(diameterMm + wallMm) / 1000;
+
+        var bobberekend = parseBobFormatted(document.getElementById("bobberekend").textContent);
+        var bovenkant = parseFloat((bobberekend + pipeOuterM).toFixed(2));
+
+        var bovenkantLabel = document.getElementById("put2bovenkant");
+        if (bovenkant > 0) {
+            bovenkantLabel.textContent = bovenkant.toFixed(2) + " +";
+        } else if (bovenkant < 0) {
+            bovenkantLabel.textContent = Math.abs(bovenkant).toFixed(2) + " -";
+        } else {
+            bovenkantLabel.textContent = "0.00";
+        }
+
+        var mv2 = parseBobFormatted(document.getElementById("putdekselhoogte-put2").value);
+        var dekking = parseFloat((mv2 - bovenkant).toFixed(2));
+        document.getElementById("put2dekking").textContent = dekking.toFixed(2);
+    };
+
     var onBerekenClick = function () {
         var m = parseInt(document.getElementById("afstand-m").value, 10) || 0;
         var cm = parseInt(document.getElementById("afstand-cm").value, 10) || 0;
@@ -243,6 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var dalingCm = Math.round((bob2 - result) * 100);
         document.getElementById("cmdaling").textContent = "- " + dalingCm;
         berekendekking();
+        berekendekkingPut2();
         clearBerekenStale();
     };
 
