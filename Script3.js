@@ -1,6 +1,59 @@
 // JavaScript source code
 
+var buizenData = [
+    { materiaal: "PVC",   diameter: 110,  wanddikte: 3.4  },
+    { materiaal: "PVC",   diameter: 160,  wanddikte: 4.7  },
+    { materiaal: "PVC",   diameter: 200,  wanddikte: 5.9  },
+    { materiaal: "PVC",   diameter: 250,  wanddikte: 7.3  },
+    { materiaal: "PVC",   diameter: 315,  wanddikte: 9.2  },
+    { materiaal: "PVC",   diameter: 400,  wanddikte: 11.7 },
+    { materiaal: "PVC",   diameter: 500,  wanddikte: 14.6 },
+    { materiaal: "PVC",   diameter: 630,  wanddikte: 18.3 },
+    { materiaal: "Gres",  diameter: 150,  wanddikte: 25.0 },
+    { materiaal: "Gres",  diameter: 200,  wanddikte: 30.0 },
+    { materiaal: "Gres",  diameter: 250,  wanddikte: 35.0 },
+    { materiaal: "Gres",  diameter: 300,  wanddikte: 40.0 },
+    { materiaal: "Gres",  diameter: 400,  wanddikte: 40.0 },
+    { materiaal: "Beton", diameter: 300,  wanddikte: 50.0 },
+    { materiaal: "Beton", diameter: 400,  wanddikte: 60.0 },
+    { materiaal: "Beton", diameter: 500,  wanddikte: 70.0 },
+    { materiaal: "Beton", diameter: 600,  wanddikte: 80.0 },
+    { materiaal: "Beton", diameter: 800,  wanddikte: 100.0 },
+    { materiaal: "Beton", diameter: 1000, wanddikte: 120.0 },
+    { materiaal: "Beton", diameter: 1200, wanddikte: 120.0 },
+    { materiaal: "HDPE",  diameter: 63,   wanddikte: 5.8  },
+    { materiaal: "HDPE",  diameter: 90,   wanddikte: 8.2  },
+    { materiaal: "HDPE",  diameter: 110,  wanddikte: 10.0 },
+    { materiaal: "HDPE",  diameter: 160,  wanddikte: 14.6 },
+    { materiaal: "HDPE",  diameter: 200,  wanddikte: 18.2 },
+    { materiaal: "PP",    diameter: 63,   wanddikte: 4.8  },
+    { materiaal: "PP",    diameter: 90,   wanddikte: 8.2  },
+    { materiaal: "PP",    diameter: 110,  wanddikte: 10.0 },
+    { materiaal: "PP",    diameter: 160,  wanddikte: 14.6 }
+];
+
 document.addEventListener("DOMContentLoaded", function () {
+    // Populate #buizen select (index page) from buizenData
+    var buizenSelect = document.getElementById("buizen");
+    if (buizenSelect) {
+        buizenData.forEach(function (b, i) {
+            var opt = document.createElement("option");
+            opt.value = i;
+            opt.text = b.materiaal + " " + b.diameter + " " + b.wanddikte.toFixed(1).replace(".", ",");
+            buizenSelect.appendChild(opt);
+        });
+    }
+
+    // Populate .buizen-table tbody (Tabel page) from buizenData
+    var buizenTbody = document.querySelector(".buizen-table tbody");
+    if (buizenTbody) {
+        buizenData.forEach(function (b) {
+            var tr = document.createElement("tr");
+            tr.innerHTML = "<td>" + b.materiaal + "</td><td>" + b.diameter + "</td><td>" + b.wanddikte.toFixed(1).replace(".", ",") + "</td>";
+            buizenTbody.appendChild(tr);
+        });
+    }
+
     // TweePutten.html: "bob" is a text input (so it can show a trailing sign)
     // that behaves like a numeric stepper. It always displays 2 decimals with
     // the sign shown AFTER the number, e.g. "3.56 -", "2.35 +", or plain "0.00"
