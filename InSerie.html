@@ -1,490 +1,1822 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>In serie - Riolen en Putten</title>
     <link rel="stylesheet" href="StyleSheet3.css" />
     <script src="ScriptInS.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav class="navbar">
-        <ul>
-            <li><a href="Tabel.html">Tabel</a></li>
-            <li><a href="index.html">Twee Putten</a></li>
-            <li><a href="Kruising.html">Kruising</a></li>
-            <li><a href="InSerie.html" class="active">In serie</a></li>
-            <li><a href="HohAfstand.html">h.o.h. afstand</a></li>
-        </ul>
+      <ul>
+        <li><a href="Tabel.html">Tabel</a></li>
+        <li><a href="index.html">Twee Putten</a></li>
+        <li><a href="Kruising.html">Kruising</a></li>
+        <li><a href="InSerie.html" class="active">In serie</a></li>
+        <li><a href="HohAfstand.html">h.o.h. afstand</a></li>
+      </ul>
     </nav>
     <div class="page-content">
-        <h1>IN SERIE</h1>
-        <p>Inhoud volgt.</p>
-
-        <div style="position: relative;">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1000"
-            height="563" viewBox="0 0 1000 600" xml:space="preserve">
-
-            <!-- --------------- -->
-
-
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="50" y="75" width="50" height="75"></rect>
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="100" y="110" width="150" height="25"></rect>
-
-            <text x="75" y="20" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace" font-size="14"
-                text-anchor="middle" fill="black">Put 1</text>
-
-            <text id="putnr1" x="75" y="40" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="mvput1" x="75" y="70" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="dek1" x="110" y="100" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">----</text>
-
-            <text id="bob1" x="110" y="130" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">------</text>
-
-            <text id="lang1" x="175" y="170" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <line
-                style="stroke: rgb(0,0,0); stroke-width: 1.5; stroke-dasharray: 2 4; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x1="75" y1="125" x2="75" y2="175"></line>
-
-            <!-- Put 2 (copy of Put 1, shifted 200px right) -->
-
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="250" y="75" width="50" height="75"></rect>
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="300" y="110" width="150" height="25"></rect>
-
-            <text x="275" y="20" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace" font-size="14"
-                text-anchor="middle" fill="black">Put 2</text>
-
-            <text id="putnr2" x="275" y="40" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="mvput2" x="275" y="70" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="dek2" x="310" y="100" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">----</text>
-
-            <text id="bob2" x="310" y="130" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">------</text>
-
-            <text id="lang2" x="375" y="170" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <line
-                style="stroke: rgb(0,0,0); stroke-width: 1.5; stroke-dasharray: 2 4; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x1="275" y1="125" x2="275" y2="175"></line>
-
-            <!-- Put 3 (copy of Put 1, shifted 400px right) -->
-
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="450" y="75" width="50" height="75"></rect>
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="500" y="110" width="150" height="25"></rect>
-
-            <text x="475" y="20" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace" font-size="14"
-                text-anchor="middle" fill="black">Put 3</text>
-
-            <text id="putnr3" x="475" y="40" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="mvput3" x="475" y="70" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="dek3" x="510" y="100" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">----</text>
-
-            <text id="bob3" x="510" y="130" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">------</text>
-
-            <text id="lang3" x="575" y="170" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <line
-                style="stroke: rgb(0,0,0); stroke-width: 1.5; stroke-dasharray: 2 4; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x1="475" y1="125" x2="475" y2="175"></line>
-
-            <!-- Put 4 (copy of Put 1, shifted 600px right) -->
-
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="650" y="75" width="50" height="75"></rect>
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="700" y="110" width="150" height="25"></rect>
-
-            <text x="675" y="20" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace" font-size="14"
-                text-anchor="middle" fill="black">Put 4</text>
-
-            <text id="putnr4" x="675" y="40" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="mvput4" x="675" y="70" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="dek4" x="710" y="100" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">----</text>
-
-            <text id="bob4" x="710" y="130" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">------</text>
-
-            <text id="lang4" x="775" y="170" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <line
-                style="stroke: rgb(0,0,0); stroke-width: 1.5; stroke-dasharray: 2 4; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x1="675" y1="125" x2="675" y2="175"></line>
-
-            <!-- Row 2: Puts 5-8 (copy of Puts 1-4, shifted 200px down) -->
-
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="50" y="275" width="50" height="75"></rect>
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="100" y="310" width="150" height="25"></rect>
-
-            <text x="75" y="220" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace" font-size="14"
-                text-anchor="middle" fill="black">Put 5</text>
-
-            <text id="putnr5" x="75" y="240" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="mvput5" x="75" y="270" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="dek5" x="110" y="300" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">----</text>
-
-            <text id="bob5" x="110" y="330" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">------</text>
-
-            <text id="lang5" x="175" y="370" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <line
-                style="stroke: rgb(0,0,0); stroke-width: 1.5; stroke-dasharray: 2 4; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x1="75" y1="325" x2="75" y2="375"></line>
-
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="250" y="275" width="50" height="75"></rect>
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="300" y="310" width="150" height="25"></rect>
-
-            <text x="275" y="220" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace" font-size="14"
-                text-anchor="middle" fill="black">Put 6</text>
-
-            <text id="putnr6" x="275" y="240" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="mvput6" x="275" y="270" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="dek6" x="310" y="300" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">----</text>
-
-            <text id="bob6" x="310" y="330" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">------</text>
-
-            <text id="lang6" x="375" y="370" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <line
-                style="stroke: rgb(0,0,0); stroke-width: 1.5; stroke-dasharray: 2 4; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x1="275" y1="325" x2="275" y2="375"></line>
-
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="450" y="275" width="50" height="75"></rect>
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="500" y="310" width="150" height="25"></rect>
-
-            <text x="475" y="220" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace" font-size="14"
-                text-anchor="middle" fill="black">Put 7</text>
-
-            <text id="putnr7" x="475" y="240" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="mvput7" x="475" y="270" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="dek7" x="510" y="300" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">----</text>
-
-            <text id="bob7" x="510" y="330" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">------</text>
-
-            <text id="lang7" x="575" y="370" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <line
-                style="stroke: rgb(0,0,0); stroke-width: 1.5; stroke-dasharray: 2 4; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x1="475" y1="325" x2="475" y2="375"></line>
-
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="650" y="275" width="50" height="75"></rect>
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="700" y="310" width="150" height="25"></rect>
-
-            <text x="675" y="220" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace" font-size="14"
-                text-anchor="middle" fill="black">Put 8</text>
-
-            <text id="putnr8" x="675" y="240" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="mvput8" x="675" y="270" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="dek8" x="710" y="300" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">----</text>
-
-            <text id="bob8" x="710" y="330" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">------</text>
-
-            <text id="lang8" x="775" y="370" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <line
-                style="stroke: rgb(0,0,0); stroke-width: 1.5; stroke-dasharray: 2 4; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x1="675" y1="325" x2="675" y2="375"></line>
-
-            <!-- Row 3: Puts 9-12 (copy of Puts 5-8, shifted 200px down) -->
-
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="50" y="475" width="50" height="75"></rect>
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="100" y="510" width="150" height="25"></rect>
-
-            <text x="75" y="420" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace" font-size="14"
-                text-anchor="middle" fill="black">Put 9</text>
-
-            <text id="putnr9" x="75" y="440" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="mvput9" x="75" y="470" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="dek9" x="110" y="500" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">----</text>
-
-            <text id="bob9" x="110" y="530" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">------</text>
-
-            <text id="lang9" x="175" y="570" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <line
-                style="stroke: rgb(0,0,0); stroke-width: 1.5; stroke-dasharray: 2 4; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x1="75" y1="525" x2="75" y2="575"></line>
-
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="250" y="475" width="50" height="75"></rect>
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="300" y="510" width="150" height="25"></rect>
-
-            <text x="275" y="420" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace" font-size="14"
-                text-anchor="middle" fill="black">Put 10</text>
-
-            <text id="putnr10" x="275" y="440" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="mvput10" x="275" y="470" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="dek10" x="310" y="500" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">----</text>
-
-            <text id="bob10" x="310" y="530" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">------</text>
-
-            <text id="lang10" x="375" y="570" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <line
-                style="stroke: rgb(0,0,0); stroke-width: 1.5; stroke-dasharray: 2 4; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x1="275" y1="525" x2="275" y2="575"></line>
-
-            <rect
-                style="stroke: rgb(0,0,0); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x="450" y="475" width="50" height="75"></rect>
-
-
-            <text x="475" y="420" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace" font-size="14"
-                text-anchor="middle" fill="black">Put 11</text>
-
-            <text id="putnr11" x="475" y="440" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-            <text id="mvput11" x="475" y="470" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" text-anchor="middle" fill="black">------</text>
-
-
-            <line
-                style="stroke: rgb(0,0,0); stroke-width: 1.5; stroke-dasharray: 2 4; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x1="475" y1="525" x2="475" y2="575"></line>
-
-
-
-            <!-- Vanaf hier naar beneden staan de Linker gegevens van de putten 2 t/m 12 -->
-
-
-            <text id="dek2L" x="190" y="100" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">----</text>
-
-            <text id="bob2L" x="190" y="130" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">------</text>
-
-            <text id="dek3L" x="390" y="100" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">----</text>
-
-            <text id="bob3L" x="390" y="130" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">------</text>
-
-            <text id="dek4L" x="590" y="100" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">----</text>
-
-            <text id="bob4L" x="590" y="130" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">------</text>
-
-            <text id="dek5L" x="790" y="100" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">----</text>
-
-            <text id="bob5L" x="790" y="130" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">------</text>
-
-            <text id="dek6L" x="190" y="300" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">----</text>
-
-            <text id="bob6L" x="190" y="330" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">------</text>
-
-            <text id="dek7L" x="390" y="300" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">----</text>
-
-            <text id="bob7L" x="390" y="330" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">------</text>
-
-            <text id="dek8L" x="590" y="300" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">----</text>
-
-            <text id="bob8L" x="590" y="330" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">------</text>
-
-            <text id="dek9L" x="790" y="300" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">----</text>
-
-            <text id="bob9L" x="790" y="330" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">------</text>
-
-            <text id="dek10L" x="190" y="500" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">----</text>
-
-            <text id="bob10L" x="190" y="530" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">------</text>
-
-            <text id="dek11L" x="390" y="500" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">----</text>
-
-            <text id="bob11L" x="390" y="530" font-family="&quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace"
-                font-size="14" fill="black">------</text>
-
-
-
-
-            <!-- Vanaf hier naar beneden staan de horizontale lijnen -->
-
-            <line
-                style="stroke: rgb(0,0,0); stroke-width: 0.5; stroke-dasharray: 10 5; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x1="75" y1="175" x2="875" y2="175"></line>
-
-            <line
-                style="stroke: rgb(0,0,0); stroke-width: 0.5; stroke-dasharray: 10 5; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x1="75" y1="375" x2="875" y2="375"></line>
-
-            <line
-                style="stroke: rgb(0,0,0); stroke-width: 0.5; stroke-dasharray: 10 5; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
-                vector-effect="non-scaling-stroke" x1="75" y1="575" x2="475" y2="575"></line>
-
+      <h1>IN SERIE</h1>
+      <p>Inhoud volgt.</p>
+
+      <div style="position: relative">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="1.1"
+          width="1000"
+          height="563"
+          viewBox="0 0 1000 600"
+          xml:space="preserve"
+        >
+          <!-- --------------- -->
+
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="50"
+            y="75"
+            width="50"
+            height="75"
+          ></rect>
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="100"
+            y="110"
+            width="150"
+            height="25"
+          ></rect>
+
+          <text
+            x="75"
+            y="20"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            Put 1
+          </text>
+
+          <text
+            id="putnr1"
+            x="75"
+            y="40"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="mvput1"
+            x="75"
+            y="70"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="dek1"
+            x="110"
+            y="100"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ----
+          </text>
+
+          <text
+            id="bob1"
+            x="110"
+            y="130"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="lang1"
+            x="175"
+            y="170"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <line
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1.5;
+              stroke-dasharray: 2 4;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(0, 0, 0);
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x1="75"
+            y1="125"
+            x2="75"
+            y2="175"
+          ></line>
+
+          <!-- Put 2 (copy of Put 1, shifted 200px right) -->
+
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="250"
+            y="75"
+            width="50"
+            height="75"
+          ></rect>
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="300"
+            y="110"
+            width="150"
+            height="25"
+          ></rect>
+
+          <text
+            x="275"
+            y="20"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            Put 2
+          </text>
+
+          <text
+            id="putnr2"
+            x="275"
+            y="40"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="mvput2"
+            x="275"
+            y="70"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="dek2"
+            x="310"
+            y="100"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ----
+          </text>
+
+          <text
+            id="bob2"
+            x="310"
+            y="130"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="lang2"
+            x="375"
+            y="170"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <line
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1.5;
+              stroke-dasharray: 2 4;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(0, 0, 0);
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x1="275"
+            y1="125"
+            x2="275"
+            y2="175"
+          ></line>
+
+          <!-- Put 3 (copy of Put 1, shifted 400px right) -->
+
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="450"
+            y="75"
+            width="50"
+            height="75"
+          ></rect>
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="500"
+            y="110"
+            width="150"
+            height="25"
+          ></rect>
+
+          <text
+            x="475"
+            y="20"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            Put 3
+          </text>
+
+          <text
+            id="putnr3"
+            x="475"
+            y="40"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="mvput3"
+            x="475"
+            y="70"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="dek3"
+            x="510"
+            y="100"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ----
+          </text>
+
+          <text
+            id="bob3"
+            x="510"
+            y="130"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="lang3"
+            x="575"
+            y="170"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <line
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1.5;
+              stroke-dasharray: 2 4;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(0, 0, 0);
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x1="475"
+            y1="125"
+            x2="475"
+            y2="175"
+          ></line>
+
+          <!-- Put 4 (copy of Put 1, shifted 600px right) -->
+
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="650"
+            y="75"
+            width="50"
+            height="75"
+          ></rect>
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="700"
+            y="110"
+            width="150"
+            height="25"
+          ></rect>
+
+          <text
+            x="675"
+            y="20"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            Put 4
+          </text>
+
+          <text
+            id="putnr4"
+            x="675"
+            y="40"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="mvput4"
+            x="675"
+            y="70"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="dek4"
+            x="710"
+            y="100"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ----
+          </text>
+
+          <text
+            id="bob4"
+            x="710"
+            y="130"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="lang4"
+            x="775"
+            y="170"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <line
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1.5;
+              stroke-dasharray: 2 4;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(0, 0, 0);
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x1="675"
+            y1="125"
+            x2="675"
+            y2="175"
+          ></line>
+
+          <!-- Row 2: Puts 5-8 (copy of Puts 1-4, shifted 200px down) -->
+
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="50"
+            y="275"
+            width="50"
+            height="75"
+          ></rect>
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="100"
+            y="310"
+            width="150"
+            height="25"
+          ></rect>
+
+          <text
+            x="75"
+            y="220"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            Put 5
+          </text>
+
+          <text
+            id="putnr5"
+            x="75"
+            y="240"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="mvput5"
+            x="75"
+            y="270"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="dek5"
+            x="110"
+            y="300"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ----
+          </text>
+
+          <text
+            id="bob5"
+            x="110"
+            y="330"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="lang5"
+            x="175"
+            y="370"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <line
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1.5;
+              stroke-dasharray: 2 4;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(0, 0, 0);
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x1="75"
+            y1="325"
+            x2="75"
+            y2="375"
+          ></line>
+
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="250"
+            y="275"
+            width="50"
+            height="75"
+          ></rect>
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="300"
+            y="310"
+            width="150"
+            height="25"
+          ></rect>
+
+          <text
+            x="275"
+            y="220"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            Put 6
+          </text>
+
+          <text
+            id="putnr6"
+            x="275"
+            y="240"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="mvput6"
+            x="275"
+            y="270"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="dek6"
+            x="310"
+            y="300"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ----
+          </text>
+
+          <text
+            id="bob6"
+            x="310"
+            y="330"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="lang6"
+            x="375"
+            y="370"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <line
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1.5;
+              stroke-dasharray: 2 4;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(0, 0, 0);
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x1="275"
+            y1="325"
+            x2="275"
+            y2="375"
+          ></line>
+
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="450"
+            y="275"
+            width="50"
+            height="75"
+          ></rect>
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="500"
+            y="310"
+            width="150"
+            height="25"
+          ></rect>
+
+          <text
+            x="475"
+            y="220"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            Put 7
+          </text>
+
+          <text
+            id="putnr7"
+            x="475"
+            y="240"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="mvput7"
+            x="475"
+            y="270"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="dek7"
+            x="510"
+            y="300"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ----
+          </text>
+
+          <text
+            id="bob7"
+            x="510"
+            y="330"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="lang7"
+            x="575"
+            y="370"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <line
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1.5;
+              stroke-dasharray: 2 4;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(0, 0, 0);
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x1="475"
+            y1="325"
+            x2="475"
+            y2="375"
+          ></line>
+
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="650"
+            y="275"
+            width="50"
+            height="75"
+          ></rect>
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="700"
+            y="310"
+            width="150"
+            height="25"
+          ></rect>
+
+          <text
+            x="675"
+            y="220"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            Put 8
+          </text>
+
+          <text
+            id="putnr8"
+            x="675"
+            y="240"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="mvput8"
+            x="675"
+            y="270"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="dek8"
+            x="710"
+            y="300"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ----
+          </text>
+
+          <text
+            id="bob8"
+            x="710"
+            y="330"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="lang8"
+            x="775"
+            y="370"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <line
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1.5;
+              stroke-dasharray: 2 4;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(0, 0, 0);
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x1="675"
+            y1="325"
+            x2="675"
+            y2="375"
+          ></line>
+
+          <!-- Row 3: Puts 9-12 (copy of Puts 5-8, shifted 200px down) -->
+
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="50"
+            y="475"
+            width="50"
+            height="75"
+          ></rect>
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="100"
+            y="510"
+            width="150"
+            height="25"
+          ></rect>
+
+          <text
+            x="75"
+            y="420"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            Put 9
+          </text>
+
+          <text
+            id="putnr9"
+            x="75"
+            y="440"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="mvput9"
+            x="75"
+            y="470"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="dek9"
+            x="110"
+            y="500"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ----
+          </text>
+
+          <text
+            id="bob9"
+            x="110"
+            y="530"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="lang9"
+            x="175"
+            y="570"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <line
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1.5;
+              stroke-dasharray: 2 4;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(0, 0, 0);
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x1="75"
+            y1="525"
+            x2="75"
+            y2="575"
+          ></line>
+
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="250"
+            y="475"
+            width="50"
+            height="75"
+          ></rect>
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="300"
+            y="510"
+            width="150"
+            height="25"
+          ></rect>
+
+          <text
+            x="275"
+            y="420"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            Put 10
+          </text>
+
+          <text
+            id="putnr10"
+            x="275"
+            y="440"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="mvput10"
+            x="275"
+            y="470"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="dek10"
+            x="310"
+            y="500"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ----
+          </text>
+
+          <text
+            id="bob10"
+            x="310"
+            y="530"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="lang10"
+            x="375"
+            y="570"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <line
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1.5;
+              stroke-dasharray: 2 4;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(0, 0, 0);
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x1="275"
+            y1="525"
+            x2="275"
+            y2="575"
+          ></line>
+
+          <rect
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1;
+              stroke-dasharray: none;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(255, 255, 255);
+              fill-opacity: 0;
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x="450"
+            y="475"
+            width="50"
+            height="75"
+          ></rect>
+
+          <text
+            x="475"
+            y="420"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            Put 11
+          </text>
+
+          <text
+            id="putnr11"
+            x="475"
+            y="440"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="mvput11"
+            x="475"
+            y="470"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            text-anchor="middle"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <line
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 1.5;
+              stroke-dasharray: 2 4;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(0, 0, 0);
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x1="475"
+            y1="525"
+            x2="475"
+            y2="575"
+          ></line>
+
+          <!-- Vanaf hier naar beneden staan de Linker gegevens van de putten 2 t/m 12 -->
+
+          <text
+            id="dek2L"
+            x="190"
+            y="100"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ----
+          </text>
+
+          <text
+            id="bob2L"
+            x="190"
+            y="130"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="dek3L"
+            x="390"
+            y="100"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ----
+          </text>
+
+          <text
+            id="bob3L"
+            x="390"
+            y="130"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="dek4L"
+            x="590"
+            y="100"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ----
+          </text>
+
+          <text
+            id="bob4L"
+            x="590"
+            y="130"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="dek5L"
+            x="790"
+            y="100"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ----
+          </text>
+
+          <text
+            id="bob5L"
+            x="790"
+            y="130"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="dek6L"
+            x="190"
+            y="300"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ----
+          </text>
+
+          <text
+            id="bob6L"
+            x="190"
+            y="330"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="dek7L"
+            x="390"
+            y="300"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ----
+          </text>
+
+          <text
+            id="bob7L"
+            x="390"
+            y="330"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="dek8L"
+            x="590"
+            y="300"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ----
+          </text>
+
+          <text
+            id="bob8L"
+            x="590"
+            y="330"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="dek9L"
+            x="790"
+            y="300"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ----
+          </text>
+
+          <text
+            id="bob9L"
+            x="790"
+            y="330"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="dek10L"
+            x="190"
+            y="500"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ----
+          </text>
+
+          <text
+            id="bob10L"
+            x="190"
+            y="530"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <text
+            id="dek11L"
+            x="390"
+            y="500"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ----
+          </text>
+
+          <text
+            id="bob11L"
+            x="390"
+            y="530"
+            font-family='"ISOCP", "ISO3098", monospace'
+            font-size="14"
+            fill="black"
+          >
+            ------
+          </text>
+
+          <!-- Vanaf hier naar beneden staan de horizontale lijnen -->
+
+          <line
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 0.5;
+              stroke-dasharray: 10 5;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(0, 0, 0);
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x1="75"
+            y1="175"
+            x2="875"
+            y2="175"
+          ></line>
+
+          <line
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 0.5;
+              stroke-dasharray: 10 5;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(0, 0, 0);
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x1="75"
+            y1="375"
+            x2="875"
+            y2="375"
+          ></line>
+
+          <line
+            style="
+              stroke: rgb(0, 0, 0);
+              stroke-width: 0.5;
+              stroke-dasharray: 10 5;
+              stroke-linecap: butt;
+              stroke-dashoffset: 0;
+              stroke-linejoin: miter;
+              stroke-miterlimit: 4;
+              fill: rgb(0, 0, 0);
+              fill-rule: nonzero;
+              opacity: 1;
+            "
+            vector-effect="non-scaling-stroke"
+            x1="75"
+            y1="575"
+            x2="475"
+            y2="575"
+          ></line>
         </svg>
 
-
-
-        <select id="put-select" style="position: absolute; left: 550px; top: 400px; width: 14ch; font-family: &quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace;">
-            <option value="put1">Put 1</option>
-            <option value="streng1-2">Streng 1-2</option>
-            <option value="put2">Put 2</option>
-            <option value="streng2-3">Streng 2-3</option>
-            <option value="put3">Put 3</option>
-            <option value="streng3-4">Streng 3-4</option>
-            <option value="put4">Put 4</option>
-            <option value="streng4-5">Streng 4-5</option>
-            <option value="put5">Put 5</option>
-            <option value="streng5-6">Streng 5-6</option>
-            <option value="put6">Put 6</option>
-            <option value="streng6-7">Streng 6-7</option>
-            <option value="put7">Put 7</option>
-            <option value="streng7-8">Streng 7-8</option>
-            <option value="put8">Put 8</option>
-            <option value="streng8-9">Streng 8-9</option>
-            <option value="put9">Put 9</option>
-            <option value="streng9-10">Streng 9-10</option>
-            <option value="put10">Put 10</option>
-            <option value="streng10-11">Streng 10-11</option>
-            <option value="put11">Put 11</option>
+        <select
+          id="put-select"
+          style="
+            position: absolute;
+            left: 550px;
+            top: 400px;
+            width: 14ch;
+            font-family: &quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace;
+          "
+        >
+          <option value="put1">Put 1</option>
+          <option value="streng1-2">Streng 1-2</option>
+          <option value="put2">Put 2</option>
+          <option value="streng2-3">Streng 2-3</option>
+          <option value="put3">Put 3</option>
+          <option value="streng3-4">Streng 3-4</option>
+          <option value="put4">Put 4</option>
+          <option value="streng4-5">Streng 4-5</option>
+          <option value="put5">Put 5</option>
+          <option value="streng5-6">Streng 5-6</option>
+          <option value="put6">Put 6</option>
+          <option value="streng6-7">Streng 6-7</option>
+          <option value="put7">Put 7</option>
+          <option value="streng7-8">Streng 7-8</option>
+          <option value="put8">Put 8</option>
+          <option value="streng8-9">Streng 8-9</option>
+          <option value="put9">Put 9</option>
+          <option value="streng9-10">Streng 9-10</option>
+          <option value="put10">Put 10</option>
+          <option value="streng10-11">Streng 10-11</option>
+          <option value="put11">Put 11</option>
         </select>
 
-
-        <div id="tab-panel-area" style="position: absolute; left: 680px; top: 395px; width: 265px; min-height: 120px; border: 1px solid #333; padding: 8px 10px; font-family: &quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace; font-size: 14px; background: white; z-index: 10;">
-            <div class="tab-panel" id="panel-put1">Informatie Put 1</div>
-            <div class="tab-panel" id="panel-streng1-2" style="display:none;">Informatie Streng 1-2</div>
-            <div class="tab-panel" id="panel-put2" style="display:none;">Informatie Put 2</div>
-            <div class="tab-panel" id="panel-streng2-3" style="display:none;">Informatie Streng 2-3</div>
-            <div class="tab-panel" id="panel-put3" style="display:none;">Informatie Put 3</div>
-            <div class="tab-panel" id="panel-streng3-4" style="display:none;">Informatie Streng 3-4<br><button type="button"></button></div>
-            <div class="tab-panel" id="panel-put4" style="display:none;">Informatie Put 4</div>
-            <div class="tab-panel" id="panel-streng4-5" style="display:none;">Informatie Streng 4-5</div>
-            <div class="tab-panel" id="panel-put5" style="display:none;">Informatie Put 5</div>
-            <div class="tab-panel" id="panel-streng5-6" style="display:none;">Informatie Streng 5-6</div>
-            <div class="tab-panel" id="panel-put6" style="display:none;">Informatie Put 6</div>
-            <div class="tab-panel" id="panel-streng6-7" style="display:none;">Informatie Streng 6-7</div>
-            <div class="tab-panel" id="panel-put7" style="display:none;">Informatie Put 7</div>
-            <div class="tab-panel" id="panel-streng7-8" style="display:none;">Informatie Streng 7-8</div>
-            <div class="tab-panel" id="panel-put8" style="display:none;">Informatie Put 8</div>
-            <div class="tab-panel" id="panel-streng8-9" style="display:none;">Informatie Streng 8-9</div>
-            <div class="tab-panel" id="panel-put9" style="display:none;">Informatie Put 9</div>
-            <div class="tab-panel" id="panel-streng9-10" style="display:none;">Informatie Streng 9-10</div>
-            <div class="tab-panel" id="panel-put10" style="display:none;">Informatie Put 10</div>
-            <div class="tab-panel" id="panel-streng10-11" style="display:none;">Informatie Streng 10-11</div>
-            <div class="tab-panel" id="panel-put11" style="display:none;">Informatie Put 11</div>
+        <div
+          id="tab-panel-area"
+          style="
+            position: absolute;
+            left: 680px;
+            top: 395px;
+            width: 265px;
+            min-height: 120px;
+            border: 1px solid #333;
+            padding: 8px 10px;
+            font-family: &quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace;
+            font-size: 14px;
+            background: white;
+            z-index: 10;
+          "
+        >
+          <div class="tab-panel" id="panel-put1">Informatie Put 1</div>
+          <div class="tab-panel" id="panel-streng1-2" style="display: none">
+            Informatie Streng 1-2
+          </div>
+          <div class="tab-panel" id="panel-put2" style="display: none">
+            Informatie Put 2
+          </div>
+          <div class="tab-panel" id="panel-streng2-3" style="display: none">
+            Informatie Streng 2-3
+          </div>
+          <div class="tab-panel" id="panel-put3" style="display: none">
+            Informatie Put 3
+          </div>
+          <div class="tab-panel" id="panel-streng3-4" style="display: none">
+            Informatie Streng 3-4<br /><button type="button"></button>
+          </div>
+          <div class="tab-panel" id="panel-put4" style="display: none">
+            Informatie Put 4
+          </div>
+          <div class="tab-panel" id="panel-streng4-5" style="display: none">
+            Informatie Streng 4-5
+          </div>
+          <div class="tab-panel" id="panel-put5" style="display: none">
+            Informatie Put 5
+          </div>
+          <div class="tab-panel" id="panel-streng5-6" style="display: none">
+            Informatie Streng 5-6
+          </div>
+          <div class="tab-panel" id="panel-put6" style="display: none">
+            Informatie Put 6
+          </div>
+          <div class="tab-panel" id="panel-streng6-7" style="display: none">
+            Informatie Streng 6-7
+          </div>
+          <div class="tab-panel" id="panel-put7" style="display: none">
+            Informatie Put 7
+          </div>
+          <div class="tab-panel" id="panel-streng7-8" style="display: none">
+            Informatie Streng 7-8
+          </div>
+          <div class="tab-panel" id="panel-put8" style="display: none">
+            Informatie Put 8
+          </div>
+          <div class="tab-panel" id="panel-streng8-9" style="display: none">
+            Informatie Streng 8-9
+          </div>
+          <div class="tab-panel" id="panel-put9" style="display: none">
+            Informatie Put 9
+          </div>
+          <div class="tab-panel" id="panel-streng9-10" style="display: none">
+            Informatie Streng 9-10
+          </div>
+          <div class="tab-panel" id="panel-put10" style="display: none">
+            Informatie Put 10
+          </div>
+          <div class="tab-panel" id="panel-streng10-11" style="display: none">
+            Informatie Streng 10-11
+          </div>
+          <div class="tab-panel" id="panel-put11" style="display: none">
+            Informatie Put 11
+          </div>
         </div>
-        </div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
