@@ -6,6 +6,67 @@
     <title>In serie - Riolen en Putten</title>
     <link rel="stylesheet" href="StyleSheet3.css" />
     <script src="ScriptInS.js" defer></script>
+    <style>
+      .put-input {
+        font-family: "ISOCP", "ISO3098", monospace;
+        font-size: 13px;
+        padding: 2px 4px;
+        border: 1px solid #666;
+        width: 90px;
+      }
+
+      .streng-input {
+        font-family: "ISOCP", "ISO3098", monospace;
+        font-size: 13px;
+        padding: 2px 4px;
+        border: 1px solid #666;
+      }
+
+      .streng-select {
+        font-family: "ISOCP", "ISO3098", monospace;
+        font-size: 13px;
+        padding: 2px 4px;
+        border: 1px solid #666;
+      }
+
+      #tab-panel-area h3 {
+        margin: 0 0 8px 0;
+        font-size: 14px;
+        font-weight: bold;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      #tab-panel-area div div {
+        margin-bottom: 4px;
+      }
+
+      #print-area {
+        display: none;
+      }
+
+      @media print {
+        @page {
+          size: A4 landscape;
+          margin: 10mm;
+        }
+        nav,
+        .page-content {
+          display: none !important;
+        }
+        #print-area {
+          display: block !important;
+        }
+        #print-area svg {
+          width: 100%;
+          max-width: 100%;
+        }
+        #print-area * {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -1744,85 +1805,296 @@
             position: absolute;
             left: 680px;
             top: 395px;
-            width: 265px;
-            min-height: 120px;
+            width: 300px;
+            max-height: 350px;
             border: 1px solid #333;
             padding: 8px 10px;
             font-family: &quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace;
             font-size: 14px;
             background: white;
             z-index: 10;
+            overflow-y: auto;
           "
         >
+          <!-- PUT PANELS -->
           <div class="tab-panel" id="panel-put1">
-            <h3>Informatie Put 1</h3>
-            <div style="margin-top: 20px;">
-              <div>nr. <input type="text" /></div>
-              <div>mv. <input type="text" /></div>
+            <h3>Put 1</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>nr. <input type="text" id="put1-nr" class="put-input" /></div>
+              <div>mv. <input type="text" id="put1-mv" class="put-input" data-min="-5" data-max="10" data-step="0.01" value="0.00" /></div>
             </div>
           </div>
+
           <div class="tab-panel" id="panel-streng1-2" style="display: none">
-            Informatie Streng 1-2
+            <h3>Streng 1-2</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>Afstand m: <input type="text" id="streng1-2-m" class="streng-input" data-min="0" data-max="500" data-step="1" value="00" style="width: 40px;" /></div>
+              <div>Afstand cm: <input type="text" id="streng1-2-cm" class="streng-input" data-min="0" data-max="99" data-step="1" value="00" style="width: 40px;" /></div>
+              <div>Helling ‰: <select id="streng1-2-helling" class="streng-select" style="width: 80px;"><option value="0.0">0,0</option><option value="0.5">0,5</option><option value="1.0">1,0</option><option value="1.5">1,5</option><option value="2.0">2,0</option><option value="2.5">2,5</option><option value="3.0">3,0</option></select></div>
+              <div>Buis: <select id="streng1-2-buis" class="streng-select" style="width: 100px;"></select></div>
+            </div>
           </div>
+
           <div class="tab-panel" id="panel-put2" style="display: none">
-            Informatie Put 2
+            <h3>Put 2</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>nr. <input type="text" id="put2-nr" class="put-input" /></div>
+              <div>mv. <input type="text" id="put2-mv" class="put-input" data-min="-5" data-max="10" data-step="0.01" value="0.00" /></div>
+            </div>
           </div>
+
           <div class="tab-panel" id="panel-streng2-3" style="display: none">
-            Informatie Streng 2-3
+            <h3>Streng 2-3</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>Afstand m: <input type="text" id="streng2-3-m" class="streng-input" data-min="0" data-max="500" data-step="1" value="00" style="width: 40px;" /></div>
+              <div>Afstand cm: <input type="text" id="streng2-3-cm" class="streng-input" data-min="0" data-max="99" data-step="1" value="00" style="width: 40px;" /></div>
+              <div>Helling ‰: <select id="streng2-3-helling" class="streng-select" style="width: 80px;"><option value="0.0">0,0</option><option value="0.5">0,5</option><option value="1.0">1,0</option><option value="1.5">1,5</option><option value="2.0">2,0</option><option value="2.5">2,5</option><option value="3.0">3,0</option></select></div>
+              <div>Buis: <select id="streng2-3-buis" class="streng-select" style="width: 100px;"></select></div>
+            </div>
           </div>
+
           <div class="tab-panel" id="panel-put3" style="display: none">
-            Informatie Put 3
+            <h3>Put 3</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>nr. <input type="text" id="put3-nr" class="put-input" /></div>
+              <div>mv. <input type="text" id="put3-mv" class="put-input" data-min="-5" data-max="10" data-step="0.01" value="0.00" /></div>
+            </div>
           </div>
+
           <div class="tab-panel" id="panel-streng3-4" style="display: none">
-            Informatie Streng 3-4
+            <h3>Streng 3-4</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>Afstand m: <input type="text" id="streng3-4-m" class="streng-input" data-min="0" data-max="500" data-step="1" value="00" style="width: 40px;" /></div>
+              <div>Afstand cm: <input type="text" id="streng3-4-cm" class="streng-input" data-min="0" data-max="99" data-step="1" value="00" style="width: 40px;" /></div>
+              <div>Helling ‰: <select id="streng3-4-helling" class="streng-select" style="width: 80px;"><option value="0.0">0,0</option><option value="0.5">0,5</option><option value="1.0">1,0</option><option value="1.5">1,5</option><option value="2.0">2,0</option><option value="2.5">2,5</option><option value="3.0">3,0</option></select></div>
+              <div>Buis: <select id="streng3-4-buis" class="streng-select" style="width: 100px;"></select></div>
+            </div>
           </div>
+
           <div class="tab-panel" id="panel-put4" style="display: none">
-            Informatie Put 4
+            <h3>Put 4</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>nr. <input type="text" id="put4-nr" class="put-input" /></div>
+              <div>mv. <input type="text" id="put4-mv" class="put-input" data-min="-5" data-max="10" data-step="0.01" value="0.00" /></div>
+            </div>
           </div>
+
           <div class="tab-panel" id="panel-streng4-5" style="display: none">
-            Informatie Streng 4-5
+            <h3>Streng 4-5</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>Afstand m: <input type="text" id="streng4-5-m" class="streng-input" data-min="0" data-max="500" data-step="1" value="00" style="width: 40px;" /></div>
+              <div>Afstand cm: <input type="text" id="streng4-5-cm" class="streng-input" data-min="0" data-max="99" data-step="1" value="00" style="width: 40px;" /></div>
+              <div>Helling ‰: <select id="streng4-5-helling" class="streng-select" style="width: 80px;"><option value="0.0">0,0</option><option value="0.5">0,5</option><option value="1.0">1,0</option><option value="1.5">1,5</option><option value="2.0">2,0</option><option value="2.5">2,5</option><option value="3.0">3,0</option></select></div>
+              <div>Buis: <select id="streng4-5-buis" class="streng-select" style="width: 100px;"></select></div>
+            </div>
           </div>
+
           <div class="tab-panel" id="panel-put5" style="display: none">
-            Informatie Put 5
+            <h3>Put 5</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>nr. <input type="text" id="put5-nr" class="put-input" /></div>
+              <div>mv. <input type="text" id="put5-mv" class="put-input" data-min="-5" data-max="10" data-step="0.01" value="0.00" /></div>
+            </div>
           </div>
+
           <div class="tab-panel" id="panel-streng5-6" style="display: none">
-            Informatie Streng 5-6
+            <h3>Streng 5-6</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>Afstand m: <input type="text" id="streng5-6-m" class="streng-input" data-min="0" data-max="500" data-step="1" value="00" style="width: 40px;" /></div>
+              <div>Afstand cm: <input type="text" id="streng5-6-cm" class="streng-input" data-min="0" data-max="99" data-step="1" value="00" style="width: 40px;" /></div>
+              <div>Helling ‰: <select id="streng5-6-helling" class="streng-select" style="width: 80px;"><option value="0.0">0,0</option><option value="0.5">0,5</option><option value="1.0">1,0</option><option value="1.5">1,5</option><option value="2.0">2,0</option><option value="2.5">2,5</option><option value="3.0">3,0</option></select></div>
+              <div>Buis: <select id="streng5-6-buis" class="streng-select" style="width: 100px;"></select></div>
+            </div>
           </div>
+
           <div class="tab-panel" id="panel-put6" style="display: none">
-            Informatie Put 6
+            <h3>Put 6</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>nr. <input type="text" id="put6-nr" class="put-input" /></div>
+              <div>mv. <input type="text" id="put6-mv" class="put-input" data-min="-5" data-max="10" data-step="0.01" value="0.00" /></div>
+            </div>
           </div>
+
           <div class="tab-panel" id="panel-streng6-7" style="display: none">
-            Informatie Streng 6-7
+            <h3>Streng 6-7</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>Afstand m: <input type="text" id="streng6-7-m" class="streng-input" data-min="0" data-max="500" data-step="1" value="00" style="width: 40px;" /></div>
+              <div>Afstand cm: <input type="text" id="streng6-7-cm" class="streng-input" data-min="0" data-max="99" data-step="1" value="00" style="width: 40px;" /></div>
+              <div>Helling ‰: <select id="streng6-7-helling" class="streng-select" style="width: 80px;"><option value="0.0">0,0</option><option value="0.5">0,5</option><option value="1.0">1,0</option><option value="1.5">1,5</option><option value="2.0">2,0</option><option value="2.5">2,5</option><option value="3.0">3,0</option></select></div>
+              <div>Buis: <select id="streng6-7-buis" class="streng-select" style="width: 100px;"></select></div>
+            </div>
           </div>
+
           <div class="tab-panel" id="panel-put7" style="display: none">
-            Informatie Put 7
+            <h3>Put 7</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>nr. <input type="text" id="put7-nr" class="put-input" /></div>
+              <div>mv. <input type="text" id="put7-mv" class="put-input" data-min="-5" data-max="10" data-step="0.01" value="0.00" /></div>
+            </div>
           </div>
+
           <div class="tab-panel" id="panel-streng7-8" style="display: none">
-            Informatie Streng 7-8
+            <h3>Streng 7-8</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>Afstand m: <input type="text" id="streng7-8-m" class="streng-input" data-min="0" data-max="500" data-step="1" value="00" style="width: 40px;" /></div>
+              <div>Afstand cm: <input type="text" id="streng7-8-cm" class="streng-input" data-min="0" data-max="99" data-step="1" value="00" style="width: 40px;" /></div>
+              <div>Helling ‰: <select id="streng7-8-helling" class="streng-select" style="width: 80px;"><option value="0.0">0,0</option><option value="0.5">0,5</option><option value="1.0">1,0</option><option value="1.5">1,5</option><option value="2.0">2,0</option><option value="2.5">2,5</option><option value="3.0">3,0</option></select></div>
+              <div>Buis: <select id="streng7-8-buis" class="streng-select" style="width: 100px;"></select></div>
+            </div>
           </div>
+
           <div class="tab-panel" id="panel-put8" style="display: none">
-            Informatie Put 8
+            <h3>Put 8</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>nr. <input type="text" id="put8-nr" class="put-input" /></div>
+              <div>mv. <input type="text" id="put8-mv" class="put-input" data-min="-5" data-max="10" data-step="0.01" value="0.00" /></div>
+            </div>
           </div>
+
           <div class="tab-panel" id="panel-streng8-9" style="display: none">
-            Informatie Streng 8-9
+            <h3>Streng 8-9</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>Afstand m: <input type="text" id="streng8-9-m" class="streng-input" data-min="0" data-max="500" data-step="1" value="00" style="width: 40px;" /></div>
+              <div>Afstand cm: <input type="text" id="streng8-9-cm" class="streng-input" data-min="0" data-max="99" data-step="1" value="00" style="width: 40px;" /></div>
+              <div>Helling ‰: <select id="streng8-9-helling" class="streng-select" style="width: 80px;"><option value="0.0">0,0</option><option value="0.5">0,5</option><option value="1.0">1,0</option><option value="1.5">1,5</option><option value="2.0">2,0</option><option value="2.5">2,5</option><option value="3.0">3,0</option></select></div>
+              <div>Buis: <select id="streng8-9-buis" class="streng-select" style="width: 100px;"></select></div>
+            </div>
           </div>
+
           <div class="tab-panel" id="panel-put9" style="display: none">
-            Informatie Put 9
+            <h3>Put 9</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>nr. <input type="text" id="put9-nr" class="put-input" /></div>
+              <div>mv. <input type="text" id="put9-mv" class="put-input" data-min="-5" data-max="10" data-step="0.01" value="0.00" /></div>
+            </div>
           </div>
+
           <div class="tab-panel" id="panel-streng9-10" style="display: none">
-            Informatie Streng 9-10
+            <h3>Streng 9-10</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>Afstand m: <input type="text" id="streng9-10-m" class="streng-input" data-min="0" data-max="500" data-step="1" value="00" style="width: 40px;" /></div>
+              <div>Afstand cm: <input type="text" id="streng9-10-cm" class="streng-input" data-min="0" data-max="99" data-step="1" value="00" style="width: 40px;" /></div>
+              <div>Helling ‰: <select id="streng9-10-helling" class="streng-select" style="width: 80px;"><option value="0.0">0,0</option><option value="0.5">0,5</option><option value="1.0">1,0</option><option value="1.5">1,5</option><option value="2.0">2,0</option><option value="2.5">2,5</option><option value="3.0">3,0</option></select></div>
+              <div>Buis: <select id="streng9-10-buis" class="streng-select" style="width: 100px;"></select></div>
+            </div>
           </div>
+
           <div class="tab-panel" id="panel-put10" style="display: none">
-            Informatie Put 10
+            <h3>Put 10</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>nr. <input type="text" id="put10-nr" class="put-input" /></div>
+              <div>mv. <input type="text" id="put10-mv" class="put-input" data-min="-5" data-max="10" data-step="0.01" value="0.00" /></div>
+            </div>
           </div>
+
           <div class="tab-panel" id="panel-streng10-11" style="display: none">
-            Informatie Streng 10-11
+            <h3>Streng 10-11</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>Afstand m: <input type="text" id="streng10-11-m" class="streng-input" data-min="0" data-max="500" data-step="1" value="00" style="width: 40px;" /></div>
+              <div>Afstand cm: <input type="text" id="streng10-11-cm" class="streng-input" data-min="0" data-max="99" data-step="1" value="00" style="width: 40px;" /></div>
+              <div>Helling ‰: <select id="streng10-11-helling" class="streng-select" style="width: 80px;"><option value="0.0">0,0</option><option value="0.5">0,5</option><option value="1.0">1,0</option><option value="1.5">1,5</option><option value="2.0">2,0</option><option value="2.5">2,5</option><option value="3.0">3,0</option></select></div>
+              <div>Buis: <select id="streng10-11-buis" class="streng-select" style="width: 100px;"></select></div>
+            </div>
           </div>
+
           <div class="tab-panel" id="panel-put11" style="display: none">
-            Informatie Put 11
+            <h3>Put 11</h3>
+            <div style="margin-top: 8px; line-height: 1.8;">
+              <div>nr. <input type="text" id="put11-nr" class="put-input" /></div>
+              <div>mv. <input type="text" id="put11-mv" class="put-input" data-min="-5" data-max="10" data-step="0.01" value="0.00" /></div>
+            </div>
           </div>
         </div>
+
+        <!-- BUTTON PANEL -->
+        <div
+          style="
+            position: absolute;
+            left: 1000px;
+            top: 395px;
+            width: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 10;
+          "
+        >
+          <button
+            id="bereken-inserie"
+            style="
+              font-size: 0.95em;
+              padding: 6px 8px;
+              font-family: &quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace;
+              cursor: pointer;
+              background-color: #e0e0e0;
+              border: 1px solid #999;
+            "
+          >
+            Berekenen
+          </button>
+          <button
+            id="reset-inserie"
+            style="
+              font-size: 0.95em;
+              padding: 6px 8px;
+              font-family: &quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace;
+              cursor: pointer;
+              background-color: #e0e0e0;
+              border: 1px solid #999;
+            "
+          >
+            Opnieuw
+          </button>
+          <button
+            id="opslaan-inserie"
+            style="
+              font-size: 0.95em;
+              padding: 6px 8px;
+              font-family: &quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace;
+              cursor: pointer;
+              background-color: #e0e0e0;
+              border: 1px solid #999;
+            "
+          >
+            Opslaan
+          </button>
+          <button
+            id="laden-inserie"
+            style="
+              font-size: 0.95em;
+              padding: 6px 8px;
+              font-family: &quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace;
+              cursor: pointer;
+              background-color: #e0e0e0;
+              border: 1px solid #999;
+            "
+          >
+            Laden
+          </button>
+          <button
+            id="afdrukken-inserie"
+            style="
+              font-size: 0.95em;
+              padding: 6px 8px;
+              font-family: &quot;ISOCP&quot;, &quot;ISO3098&quot;, monospace;
+              cursor: pointer;
+              background-color: #e0e0e0;
+              border: 1px solid #999;
+            "
+          >
+            Afdrukken
+          </button>
+        </div>
+
+        <input
+          type="file"
+          id="laad-bestand-inserie"
+          accept=".2ps"
+          style="display: none"
+        />
       </div>
     </div>
+
+    <div id="print-area"></div>
   </body>
 </html>
